@@ -12,16 +12,17 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: #3498DB;
+    background-image: linear-gradient(#AD1DEB,#6E72FC)
 }
 
 .wrapper {
     height: 260px;
-    background: #fff;
+    background: whitesmoke;
     max-width: 410px;
     border-radius: 7px;
     padding: 16px 25px;
     transition: height 0.3s ease-in;
+    box-shadow: 5px 5px rgba(145, 3, 188, 0.5);
 }
 
 .wrapper.active {
@@ -62,7 +63,11 @@ header p{
     cursor: pointer;
     margin-top: 20px;
     font-size: 17px;
-    background: #3498DB;
+    background-image: linear-gradient(to right,#AD1DEB,#6E72FC);
+}
+
+#btn:active {
+    transform: scale(0.97);
 }
 
 .wrapper .qr-code {
