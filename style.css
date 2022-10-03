@@ -15,6 +15,24 @@ body {
     background-image: linear-gradient(#AD1DEB,#6E72FC)
 }
 
+#toasts {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.toast {
+    background-color: #fff;
+    color: rebeccapurple;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    color: rgb(38, 230, 38);
+    margin: 0.5rem;
+}
+
 .wrapper {
     height: 260px;
     background: whitesmoke;
@@ -68,6 +86,7 @@ header p{
     margin-top: 20px;
     font-size: 17px;
     background-image: linear-gradient(to right,#AD1DEB,#6E72FC);
+    transition: width 0.4s ease;
 }
 
 .copyBtn {
@@ -84,6 +103,7 @@ header p{
     height: 55px;
     border: none;
     outline: none;
+    transition: opacity 0.4s 0.4s ease;
     border-radius: 5px;
 }
 

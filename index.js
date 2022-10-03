@@ -15,6 +15,12 @@ copyBtn.addEventListener('click',()=>{
 function createNotification(messagetext = message) {
     const notif = document.createElement('div')
     notif.classList.add('toast')
+    notif.innerText = messagetext
+    toasts.appendChild(notif)
+
+    setTimeout(()=>{
+        notif.remove()
+    },2500)
 }
 
 async function copyToClipboard(src) {
@@ -75,5 +81,8 @@ qrInput.addEventListener("keypress",(e)=>{
             btn.innerText = "Generate QR Code"
         })
         wrapper.classList.add("active");
+
+        btn.style.width = '84%';
+        copyBtn.classList.add('active')
     }
 })
