@@ -138,3 +138,21 @@ header p{
     pointer-events: auto;
     transition: opacity 0.5s 0.5s ease;
 }
+
+@media (max-width: 410px) {
+    .wrapper {
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 350px) {
+    .wrapper {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 315px) {
+    .wrapper {
+        max-width: 275px;
+    }
+}
