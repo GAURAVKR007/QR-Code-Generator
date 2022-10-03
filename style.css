@@ -145,14 +145,14 @@ header p{
     }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 375px) {
     .wrapper {
-        max-width: 300px;
+        max-width: 320px;
     }
 }
 
-@media (max-width: 315px) {
+@media (max-width: 335px) {
     .wrapper {
-        max-width: 275px;
+        max-width: 295px;
     }
 }
