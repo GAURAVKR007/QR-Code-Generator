@@ -40,9 +40,13 @@ header p{
     color: #474747;
 }
 
+.form {
+    position: relative;
+}
 .wrapper .form {
     margin:  20px 0 25px;
 }
+
 
 .form :where(input , button) {
     width: 100%;
@@ -66,9 +70,36 @@ header p{
     background-image: linear-gradient(to right,#AD1DEB,#6E72FC);
 }
 
+.copyBtn {
+    background-image: linear-gradient(to right,#AD1DEB,#6E72FC);
+    padding: 0;
+    color: #fff;
+    width: 15%;
+    opacity: 0;
+    font-size: 22px;
+    position: absolute;
+    top: auto;
+    right: 1px;
+    cursor: pointer;
+    height: 55px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.copyBtn.active{
+    opacity: 1;
+}
+
+.copyBtn:active {
+    transform: scale(0.97);
+}
+
 #btn:active {
     transform: scale(0.97);
 }
+
+
 
 .wrapper .qr-code {
     border: 1px solid #ccc;

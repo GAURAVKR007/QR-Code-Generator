@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+  />
     <title>QR Code Generator</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -15,13 +19,20 @@
         </header>
         <div class="form">
             <input type="text" id="qrInput" placeholder="Enter text or url">
-            <button id="btn">Generate QR Code</button>
+            <div class="buttons" id="buttons">
+                <button id="btn">Generate QR Code</button>
+                <button class="copyBtn" id="copy"><i class="fa-regular fa-clipboard"></i></button>
+            </div>
+           
         </div>
         <div class="qr-code">
             <img src="" alt="qr-code">
         </div>
+       
     </div>
 
+    <div id="toasts"></div>
+    
     <script src="index.js"></script>
 </body>
 </html>
