@@ -5,14 +5,12 @@ qrImg = document.querySelector('.qr-code img')
 const copyBtn = document.getElementById('copy')
 const toasts = document.getElementById('toasts')
 
-const message = "Copied To Clipboard"
+// const message = "Copied To Clipboard"
+const message1 = "Downloaded"
 
-copyBtn.addEventListener('click',()=>{
-    copyToClipboard(qrImg.src)
-    createNotification()
-})
 
-function createNotification(messagetext = message) {
+
+function createNotification(messagetext = message1) {
     const notif = document.createElement('div')
     notif.classList.add('toast')
     notif.innerText = messagetext
@@ -20,26 +18,61 @@ function createNotification(messagetext = message) {
 
     setTimeout(()=>{
         notif.remove()
-    },2500)
+    },3500)
 }
 
-async function copyToClipboard(src) {
-    const data = await fetch(src);
-    const blob = await data.blob();
 
-    try{
-        await navigator.clipboard.write([
-            new ClipboardItem({
-                [blob.type]: blob,
-            })
-        ])
-        console.log("Success");
-    }catch(e) {
-        console.log(e);
-    }
+
+copyBtn.addEventListener('click',()=>{
+    // copyToClipboard(qrImg.src)
+    let imagePath = qrImg.getAttribute('src');
+    let fileName = getFileName(imagePath);
+    saveAs(imagePath, fileName);
+        // download(qr.src)
+    createNotification()
+})
+
+// function download(source){
+//     const fileName = source.split('/').pop();
+// 	var el = document.createElement("a");
+// 	el.setAttribute("href", source);
+// 	el.setAttribute("download", fileName);
+// 	document.body.appendChild(el);
+//  	el.click();
+// 	el.remove();
+// }
+
+
+// // Must use FileSaver.js 2.0.2 because 2.0.3 has issues.
+// btnDownload.addEventListener('click', () => {
+//     let imagePath = img.getAttribute('src');
+//     let fileName = getFileName(imagePath);
+//     saveAs(imagePath, fileName);
+// });
+
+function getFileName(str) {
+    return str.substring(str.lastIndexOf('=') + 1)
+}
+
+
+
+// async function copyToClipboard(src) {
+//     const data = await fetch(src);
+//     const blob = await data.blob();
+
+//     try{
+//         await navigator.clipboard.write([
+//             new ClipboardItem({
+//                 [blob.type]: blob,
+//             })
+//         ])
+//         console.log("Success");
+//     }catch(e) {
+//         console.log(e);
+//     }
 
    
-}
+// }
 
 console.log(qrImg.src);
 
